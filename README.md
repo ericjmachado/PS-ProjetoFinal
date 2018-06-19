@@ -7,5 +7,5 @@ Implemente um sistema de gestão de eventos similar ao que temos no site da UFG 
 
 ## Integrantes
 
-Edionay Aguiar
+Edionay Aguiar  
 Eric de Jesus
