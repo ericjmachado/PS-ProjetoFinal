@@ -1,7 +1,3 @@
-tomcat/
-.settings/
+.idea/
 *.iml
 target/
-.classpath
-.project
-/build/
