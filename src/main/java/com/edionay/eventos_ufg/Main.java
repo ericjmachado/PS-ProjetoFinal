@@ -1,34 +1,50 @@
 package com.edionay.eventos_ufg;
 
-import com.db4o.Db4o;
-import com.db4o.ObjectContainer;
-import com.db4o.ObjectSet;
 import com.edionay.eventos_ufg.modelo.Evento;
+import com.edionay.eventos_ufg.modelo.GerenciadorBD;
+import com.edionay.eventos_ufg.visao.EventosCLI;
 
-import java.awt.*;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        ObjectContainer eventosDB = Db4o.openFile("eventos.db4o");
+        while (true) {
+            EventosCLI.exibirMenuPrincipal();
+            Scanner leitorDoTeclado = new Scanner(System.in);
 
-        Evento evento = new Evento();
-        ObjectSet resultado = eventosDB.queryByExample(evento);
+            int opcao = leitorDoTeclado.nextInt();
 
-        System.out.println(resultado.size());
+            switch (opcao) {
+                case 1:
+                    EventosCLI.exibirGradeDeEventos(GerenciadorBD.recuperarEventos());
+                    break;
+                case 2:
+                    leitorDoTeclado.nextLine();
+                    System.out.println("Titulo:");
+                    String titulo = leitorDoTeclado.nextLine();
+                    System.out.println("Detalhes:");
+                    String detalhes = leitorDoTeclado.nextLine();
 
-        for (Object e: resultado) {
-            Evento event = (Evento) e;
-            System.out.println(event.getTitulo());
+                    Evento evento = new Evento(titulo, detalhes);
+                    GerenciadorBD.gravarEvento(evento);
+                    break;
+                case 3:
+                    leitorDoTeclado.nextLine();
+                    System.out.println("Titulo:");
+                    String tituloParaBusca = leitorDoTeclado.nextLine();
+                    EventosCLI.exibirGradeDeEventos(GerenciadorBD.buscarEvento(tituloParaBusca));
+                    break;
+                case 4:
+                    leitorDoTeclado.nextLine();
+                    System.out.println("Titulo:");
+                    String tituloParaApagar = leitorDoTeclado.nextLine();
+                    GerenciadorBD.apagarEvento(tituloParaApagar);
+                    break;
+            }
+
         }
-
-        try {
-
-        } finally {
-            eventosDB.close();
-        }
-
     }
 }
 

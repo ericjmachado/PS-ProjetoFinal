@@ -8,6 +8,11 @@ public class Evento {
     public Evento() {
     }
 
+    public Evento(String titulo, String detalhes) {
+        setTitulo(titulo);
+        setDetalhes(detalhes);
+    }
+
     public String getTitulo() {
         return titulo;
     }
@@ -26,6 +31,6 @@ public class Evento {
 
     @Override
     public String toString() {
-        return "Título: " + getTitulo() + "Detalhes: " + getDetalhes();
+        return "Título: " + getTitulo() + "\nDetalhes: " + getDetalhes();
     }
 }
