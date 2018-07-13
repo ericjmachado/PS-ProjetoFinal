@@ -8,8 +8,7 @@ public class EventoGetCLI{
 		
 		Scanner leitor = new Scanner(System.in);
 		
-		leitor.nextLine();
-        System.out.println("Titulo: ");
+        System.out.print("Titulo: ");
         String titulo = leitor.nextLine();
         
         return titulo;

@@ -11,8 +11,7 @@ public class EventosCreateCLI {
 	
 		
 		Scanner leitor = new Scanner(System.in);
-		
-        leitor.nextLine();
+
         System.out.print("Titulo: ");
         String titulo = leitor.nextLine();
         System.out.print("Localização: ");
