@@ -22,15 +22,15 @@ public class Main {
                     break;
                 case 2:
                     leitorDoTeclado.nextLine();
-                    System.out.print("Titulo:");
+                    System.out.print("Titulo: ");
                     String titulo = leitorDoTeclado.nextLine();
-                    System.out.print("Localização:");
+                    System.out.print("Localização: ");
                     String localizacao = leitorDoTeclado.nextLine();
-                    System.out.print("Data inicial (dd-mm-aaa):");
+                    System.out.print("Data inicial (dd-mm-aaa): ");
                     String dataInicial = leitorDoTeclado.nextLine();
-                    System.out.print("Data final (dd-mm-aaa):");
+                    System.out.print("Data final (dd-mm-aaa): ");
                     String dataFinal = leitorDoTeclado.nextLine();
-                    System.out.print("Detalhes:");
+                    System.out.print("Detalhes: ");
                     String detalhes = leitorDoTeclado.nextLine();
 
                     Evento evento = new Evento(titulo, localizacao, dataInicial, dataFinal, detalhes);
@@ -38,13 +38,13 @@ public class Main {
                     break;
                 case 3:
                     leitorDoTeclado.nextLine();
-                    System.out.println("Titulo:");
+                    System.out.println("Titulo: ");
                     String tituloParaBusca = leitorDoTeclado.nextLine();
                     EventosCLI.exibirGradeDeEventos(GerenciadorBD.buscarEvento(tituloParaBusca));
                     break;
                 case 4:
                     leitorDoTeclado.nextLine();
-                    System.out.println("Titulo:");
+                    System.out.println("Titulo: ");
                     String tituloParaApagar = leitorDoTeclado.nextLine();
                     GerenciadorBD.apagarEvento(tituloParaApagar);
                     break;
