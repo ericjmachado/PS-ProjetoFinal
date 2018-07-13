@@ -20,6 +20,9 @@ public class EventosCLI {
 
         for (Evento e: eventos) {
             System.out.println("Título: " + e.getTitulo());
+            System.out.println("Local: " + e.getLocalizacao());
+            System.out.println("Data inicial: " + e.getDataInicial());
+            System.out.println("Data final: " + e.getDataFinal());
             System.out.println("Detalhes: " + e.getDetalhes());
             System.out.println(" -----------------------------------------------");
         }
