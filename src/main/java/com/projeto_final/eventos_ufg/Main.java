@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.projeto_final.eventos_ufg.controlador.Controlador;
 import com.projeto_final.eventos_ufg.modelo.Evento;
-import com.projeto_final.eventos_ufg.modelo.GerenciadorBD;
+import com.projeto_final.eventos_ufg.modelo.EventoDAO;
 import com.projeto_final.eventos_ufg.visao.EventoGetCLI;
 import com.projeto_final.eventos_ufg.visao.EventosCLI;
 import com.projeto_final.eventos_ufg.visao.EventosCreateCLI;
@@ -25,7 +25,7 @@ public class Main {
                     break;
                 case 2:
                     Evento evento = EventosCreateCLI.createEvento();
-                    GerenciadorBD.gravarEvento(evento);
+                    EventoDAO.gravarEvento(evento);
                     break;
                 case 3:
                 	String titulo = EventoGetCLI.findEvento();

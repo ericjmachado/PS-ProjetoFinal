@@ -5,10 +5,9 @@ import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
 import com.projeto_final.eventos_ufg.controlador.Controlador;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class GerenciadorBD {
+public class EventoDAO {
 
     private static String caminhoDoBanco = "eventos.db4o";
 
