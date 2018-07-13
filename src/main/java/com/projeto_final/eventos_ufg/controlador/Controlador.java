@@ -4,6 +4,7 @@ import com.db4o.ObjectSet;
 import com.projeto_final.eventos_ufg.modelo.Evento;
 import com.projeto_final.eventos_ufg.modelo.GerenciadorBD;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +24,18 @@ public class Controlador {
             eventos.add(evento);
         }
         return eventos;
+    }
+
+    public static List<Evento> buscarEvento(String titulo) {
+
+        Evento evento = new Evento(titulo);
+        return GerenciadorBD.buscarEvento(evento);
+    }
+
+    public static void apagarEvento(String titulo) {
+
+        Evento evento = new Evento(titulo);
+        GerenciadorBD.apagarEvento(evento);
     }
 
 }

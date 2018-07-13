@@ -42,19 +42,15 @@ public class GerenciadorBD {
 
     }
 
-    public static List<Evento> buscarEvento(String titulo) {
-        Evento exemploDeEvento = new Evento(titulo);
+    public static List<Evento> buscarEvento(Evento evento) {
         ObjectContainer banco = Db4o.openFile(caminhoDoBanco);
 
-        List<Evento> eventos = new ArrayList<Evento>();
+        List<Evento> eventos;
 
         try {
-            ObjectSet resultado = banco.queryByExample(exemploDeEvento);
+            ObjectSet resultado = banco.queryByExample(evento);
+            eventos = Controlador.objetoParaEvento(resultado);
 
-            for (Object o: resultado) {
-                Evento evento = (Evento) o;
-                eventos.add(evento);
-            }
         } finally {
             banco.close();
         }
@@ -62,12 +58,11 @@ public class GerenciadorBD {
         return eventos;
     }
 
-    public static void apagarEvento(String titulo) {
-        Evento exemploDeEvento = new Evento(titulo);
+    public static void apagarEvento(Evento evento) {
         ObjectContainer banco = Db4o.openFile(caminhoDoBanco);
 
         try {
-            ObjectSet resultado = banco.queryByExample(exemploDeEvento);
+            ObjectSet resultado = banco.queryByExample(evento);
 
             for (Object o: resultado) {
                 banco.delete(o);

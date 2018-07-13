@@ -29,11 +29,11 @@ public class Main {
                     break;
                 case 3:
                 	String titulo = EventoGetCLI.findEvento();
-                    EventosCLI.exibirGradeDeEventos(GerenciadorBD.buscarEvento(titulo));
+                    EventosCLI.exibirGradeDeEventos(Controlador.buscarEvento(titulo));
                     break;
                 case 4:
                 	String tituloToDelete = EventoGetCLI.findEvento();
-                    GerenciadorBD.apagarEvento(tituloToDelete);
+                	Controlador.apagarEvento(tituloToDelete);
                     break;
             }
         }
