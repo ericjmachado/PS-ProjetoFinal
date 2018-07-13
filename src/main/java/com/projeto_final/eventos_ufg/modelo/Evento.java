@@ -1,4 +1,4 @@
-package com.edionay.eventos_ufg.modelo;
+package com.projeto_final.eventos_ufg.modelo;
 
 public class Evento {
 

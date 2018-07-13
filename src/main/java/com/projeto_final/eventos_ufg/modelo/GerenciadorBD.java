@@ -1,4 +1,4 @@
-package com.edionay.eventos_ufg.modelo;
+package com.projeto_final.eventos_ufg.modelo;
 
 import com.db4o.Db4o;
 import com.db4o.ObjectContainer;

@@ -1,9 +1,9 @@
-package com.edionay.eventos_ufg.visao;
-
-import com.edionay.eventos_ufg.controlador.Controlador;
-import com.edionay.eventos_ufg.modelo.Evento;
+package com.projeto_final.eventos_ufg.visao;
 
 import java.util.List;
+
+import com.projeto_final.eventos_ufg.controlador.Controlador;
+import com.projeto_final.eventos_ufg.modelo.Evento;
 
 public class EventosCLI {
 
