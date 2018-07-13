@@ -9,6 +9,13 @@ public class EventosCLI {
 
 
     public static void exibirMenuPrincipal() {
+    	
+    	for(int i = 0; i < 20; i++) {
+    		
+    		System.out.println();
+    		
+    	}
+    	
         System.out.println("1 - Exibir todos os eventos");
         System.out.println("2 - Registrar novo evento");
         System.out.println("3 - Buscar por título");
