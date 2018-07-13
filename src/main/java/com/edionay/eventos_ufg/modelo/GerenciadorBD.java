@@ -44,7 +44,7 @@ public class GerenciadorBD {
     }
 
     public static List<Evento> buscarEvento(String titulo) {
-        Evento exemploDeEvento = new Evento(titulo, null);
+        Evento exemploDeEvento = new Evento(titulo);
         ObjectContainer banco = Db4o.openFile(caminhoDoBanco);
 
         List<Evento> eventos = new ArrayList<Evento>();
@@ -64,7 +64,7 @@ public class GerenciadorBD {
     }
 
     public static void apagarEvento(String titulo) {
-        Evento exemploDeEvento = new Evento(titulo, null);
+        Evento exemploDeEvento = new Evento(titulo);
         ObjectContainer banco = Db4o.openFile(caminhoDoBanco);
 
         try {
