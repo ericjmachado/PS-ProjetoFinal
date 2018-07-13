@@ -3,6 +3,7 @@ package com.projeto_final.eventos_ufg.modelo;
 import com.db4o.Db4o;
 import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
+import com.projeto_final.eventos_ufg.controlador.Controlador;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,15 +27,13 @@ public class GerenciadorBD {
     public static List<Evento> recuperarEventos(){
         ObjectContainer banco = Db4o.openFile(caminhoDoBanco);
         Evento exemploDeEvento = new Evento();
-        List<Evento> eventos = new ArrayList<Evento>();
+        List<Evento> eventos;
 
         try {
             ObjectSet resultado = banco.queryByExample(exemploDeEvento);
 
-            for (Object o: resultado) {
-                Evento evento = (Evento) o;
-                eventos.add(evento);
-            }
+            eventos = Controlador.objetoParaEvento(resultado);
+
         } finally {
             banco.close();
         }

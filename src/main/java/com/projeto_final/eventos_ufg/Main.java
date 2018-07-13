@@ -2,6 +2,7 @@ package com.projeto_final.eventos_ufg;
 
 import java.util.Scanner;
 
+import com.projeto_final.eventos_ufg.controlador.Controlador;
 import com.projeto_final.eventos_ufg.modelo.Evento;
 import com.projeto_final.eventos_ufg.modelo.GerenciadorBD;
 import com.projeto_final.eventos_ufg.visao.EventoGetCLI;
@@ -20,7 +21,7 @@ public class Main {
 
             switch (opcao) {
                 case 1:
-                    EventosCLI.exibirGradeDeEventos(GerenciadorBD.recuperarEventos());
+                    EventosCLI.exibirGradeDeEventos(Controlador.recuperarEventos());
                     break;
                 case 2:
                     Evento evento = EventosCreateCLI.createEvento();
